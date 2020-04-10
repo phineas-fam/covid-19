@@ -29,6 +29,15 @@ def add_question():
     return question_schema.jsonify(new_question)
 
 
-@api_blueprint.route("/survey/", methods=["GET"])
-def view_answer():
-    answers = Answers.query.get.all()
+@api_blueprint.route("/answers/", methods=["GET"])
+def get_answers():
+    answers = Answers.query.all()
+    result = answer_schema.dump(answers, many=True)
+    return jsonify(result)
+
+
+@api_blueprint.route("/questions/", methods=["GET"])
+def get_questions():
+    questions = Questions.query.all()
+    result = answer_schema.dump(questions, many=True)
+    return jsonify(result)
