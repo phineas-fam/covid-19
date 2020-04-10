@@ -12,6 +12,10 @@ app.config["SQLALCHEMY_ECHO"] = False
 CORS(app)
 ma = Marshmallow(app)
 
-from covid.models import db  # noqa isort:skip
+from covidBE.models import db  # noqa isort:skip
 
 db.init_app(app)
+
+from covidBE.views import api_blueprint  # noqa isort:skip
+
+app.register_blueprint(api_blueprint)
