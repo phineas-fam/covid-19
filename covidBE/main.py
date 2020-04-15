@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_cors import CORS
 from flask_marshmallow import Marshmallow
+from flask_migrate import Migrate
 
 
 app = Flask(__name__)
@@ -15,6 +16,7 @@ ma = Marshmallow(app)
 from covidBE.models import db  # noqa isort:skip
 
 db.init_app(app)
+migrate = Migrate(app, db)
 
 from covidBE.views import api_blueprint  # noqa isort:skip
 
