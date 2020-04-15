@@ -1,0 +1,15 @@
+Flask==1.1.1
+Flask-Cors==3.0.8
+Flask-Marshmallow==0.10.1
+Flask-SQLAlchemy==2.4.0
+requests==2.22.0
+marshmallow_enum
+marshmallow-sqlalchemy
+SQLAlchemy==1.3.4
+Werkzeug==0.16.0
+pytest
+python-dateutil
+
+black
+flake8
+isort
