@@ -13,11 +13,11 @@ app.config["SQLALCHEMY_ECHO"] = False
 CORS(app)
 ma = Marshmallow(app)
 
-from covidBE.models import db  # noqa isort:skip
+from covidbe.models import db  # noqa isort:skip
 
 db.init_app(app)
 migrate = Migrate(app, db)
 
-from covidBE.views import api_blueprint  # noqa isort:skip
+from covidbe.views import api_blueprint  # noqa isort:skip
 
 app.register_blueprint(api_blueprint)

@@ -1,6 +1,6 @@
-from covidBE.main import db
-from covidBE.models import Answers, Questions
-from covidBE.schemas import answer_schema, question_schema
+from covidbe.main import db
+from covidbe.models import Answers, Questions
+from covidbe.schemas import answer_schema, question_schema
 from flask import Blueprint, jsonify, request
 
 

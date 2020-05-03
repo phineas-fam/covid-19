@@ -1,4 +1,4 @@
-from covidBE.main import ma
+from covidbe.main import ma
 
 
 class QuestionSchema(ma.Schema):
