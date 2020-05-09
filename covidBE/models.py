@@ -1,5 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
-
+from sqlalchemy.types import Enum
 
 db = SQLAlchemy()
 
@@ -12,5 +12,14 @@ class Questions(db.Model):
 class Answers(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
-    text = db.Column(db.Text)
-    question = db.Column(db.Integer, db.ForeignKey("questions.id"), nullable=False)
+    q1 = db.Column(Enum("Yes", "No", name="Answer"))
+    q2 = db.Column(Enum("Yes", "No", name="Answer"))
+    q3 = db.Column(Enum("Yes", "No", name="Answer"))
+    q4 = db.Column(Enum("Yes", "No", name="Answer"))
+    q5 = db.Column(Enum("Yes", "No", name="Answer"))
+    q6 = db.Column(Enum("Yes", "No", name="Answer"))
+    q7 = db.Column(Enum("Yes", "No", name="Answer"))
+    q8 = db.Column(Enum("Yes", "No", name="Answer"))
+    province = db.Column(db.Text)
+    longitude = db.Column(db.Numeric)
+    latitude = db.Column(db.Numeric)

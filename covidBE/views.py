@@ -10,10 +10,8 @@ api_blueprint = Blueprint("api", "api")
 @api_blueprint.route("/answer", methods=["POST"])
 def add_answer():
     answers = request.json["answers"]
-    for answer_item in answers.values():
-        answer = answer_item
-        new_answer = Answers(**answer)
-        db.session.add(new_answer)
+    new_answer = Answers(**answers)
+    db.session.add(new_answer)
     db.session.commit()
     return answer_schema.jsonify(new_answer)
 
@@ -38,5 +36,5 @@ def get_answers():
 @api_blueprint.route("/questions/", methods=["GET"])
 def get_questions():
     questions = Questions.query.all()
-    result = answer_schema.dump(questions, many=True)
+    result = question_schema.dump(questions, many=True)
     return jsonify({"questions": result})
