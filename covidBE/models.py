@@ -1,5 +1,7 @@
+import datetime
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.types import Enum
+from sqlalchemy.sql import func
 
 db = SQLAlchemy()
 
@@ -20,6 +22,7 @@ class Answers(db.Model):
     q6 = db.Column(Enum("Yes", "No", name="Answer"))
     q7 = db.Column(Enum("Yes", "No", name="Answer"))
     q8 = db.Column(Enum("Yes", "No", name="Answer"))
+    date = db.Column(db.DateTime, server_default=func.current_timestamp())
     province = db.Column(db.Text)
     longitude = db.Column(db.Numeric)
     latitude = db.Column(db.Numeric)

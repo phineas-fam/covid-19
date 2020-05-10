@@ -22,6 +22,7 @@ class AnswersSchema(ma.Schema):
             "q6",
             "q7",
             "q8",
+            "date",
         )
 
 
